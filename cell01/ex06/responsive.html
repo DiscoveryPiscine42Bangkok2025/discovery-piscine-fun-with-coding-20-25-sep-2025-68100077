@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Responsive Table</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        table {
+            width: 100vw;
+            height: 100vh;
+            border-collapse: collapse;
+            table-layout: fixed; /* ทำให้ช่องเท่ากัน */
+        }
+        td {
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 2vw; /* ปรับขนาดตัวหนังสือตามความกว้างหน้าจอ */
+            color: white;
+            /* ให้ td ขยายเต็มความสูงของแถว */
+            height: 100vh;
+        }
+        .box1 {
+            background-color: teal;
+        }
+        .box2 {
+            background-color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="box1">Hello from Box 1</td>
+            <td class="box2">Welcome to Box 2</td>
+        </tr>
+    </table>
+</body>
+</html>
 
