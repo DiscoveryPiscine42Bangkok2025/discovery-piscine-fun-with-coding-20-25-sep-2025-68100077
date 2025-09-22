@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Improved Responsive Table</title>
+    <link rel="stylesheet" href="responsive.css" />
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="box1">Hello from Box 1</td>
+            <td class="box2">Welcome to Box 2</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+/* ให้ html และ body เต็มพื้นที่ */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* body ตั้งค่าให้แสดงผลเต็ม viewport */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ตารางให้กินเต็มความกว้างและความสูง */
+table {
+    width: 100vw;
+    height: 100vh;
+    border-collapse: collapse;
+    table-layout: fixed; /* ให้ช่องกว้างเท่ากัน */
+}
+
+/* ช่องในตาราง */
+td {
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2vw; /* ปรับขนาดตัวหนังสือตามขนาดหน้าจอ */
+    color: white;
+    height: 100vh; /* ให้ช่องสูงเท่ากับ viewport */
+}
+
+/* สีพื้นหลังช่อง 1 */
+.box1 {
+    background-color: teal;
+}
+
+/* สีพื้นหลังช่อง 2 */
+.box2 {
+    background-color: darkorange;
+}
