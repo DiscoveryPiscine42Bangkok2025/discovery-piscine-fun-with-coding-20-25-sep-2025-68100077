@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator - It’s over 9000</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    label, input, select, button {
+      font-size: 1em;
+      margin: 5px;
+    }
+    input[type="text"] {
+      width: 80px;
+      padding: 5px;
+    }
+    button {
+      padding: 5px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Calculator - It’s over 9000</h1>
+
+  <form id="calc-form">
+    <label for="left">Left operand:</label>
+    <input type="text" id="left" name="left" />
+
+    <label for="operator">Operator:</label>
+    <select id="operator" name="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+
+    <label for="right">Right operand:</label>
+    <input type="text" id="right" name="right" />
+
+    <input type="button" id="try-btn" value="Try me!" />
+  </form>
+
+  <script>
+    // ฟังก์ชันตรวจว่าค่าเป็น integer ≥ 0
+    function isNonNegInt(value) {
+      const num = Number(value);
+      // ต้องแปลงได้, เป็น integer, ≥ 0
+      return Number.isInteger(num) && num >= 0;
+    }
+
+    function calculate() {
+      const leftVal = document.getElementById('left').value.trim();
+      const rightVal = document.getElementById('right').value.trim();
+      const operator = document.getElementById('operator').value;
+
+      // ตรวจค่า input
+      if (!isNonNegInt(leftVal) || !isNonNegInt(rightVal)) {
+        alert('Error :(');
+        return;
+      }
+
+      const leftNum = Number(leftVal);
+      const rightNum = Number(rightVal);
+
+      if ((operator === '/' || operator === '%') && rightNum === 0) {
+        alert("It’s over 9000!");
+        console.log("It’s over 9000!");
+        return;
+      }
+
+      let result;
+      switch(operator) {
+        case '+':
+          result = leftNum + rightNum;
+          break;
+        case '-':
+          result = leftNum - rightNum;
+          break;
+        case '*':
+          result = leftNum * rightNum;
+          break;
+        case '/':
+          result = leftNum / rightNum;
+          break;
+        case '%':
+          result = leftNum % rightNum;
+          break;
+        default:
+          alert('Error :(');
+          return;
+      }
+
+      alert('Result: ' + result);
+      console.log('Result:', result);
+    }
+
+    document.getElementById('try-btn').addEventListener('click', calculate);
+
+    // ทุก 30 วินาที แจ้ง alert
+    setInterval(function() {
+      alert('Please, use me...');
+    }, 30000);
+  </script>
+
+</body>
+</html>
