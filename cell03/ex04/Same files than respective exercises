@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Background (jQuery)</title>
+  <link rel="stylesheet" href="backgroound.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <button id="change-btn">Change Background Color</button>
+  </div>
+
+  <script src="backgroound.js"></script>
+</body>
+</html>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+}
+
+button {
+  padding: 15px 25px;
+  font-size: 1.2em;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+$(document).ready(function () {
+  $('#change-btn').click(function () {
+    $('body').css('background-color', getRandomColor());
+  });
+});
+ex00bis/
+├── index.html
+├── backgroound.css
+└── backgroound.js
