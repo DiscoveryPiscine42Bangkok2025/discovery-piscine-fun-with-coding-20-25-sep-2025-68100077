@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile Card</title>
+    <link rel="stylesheet" href="card.css">
+</head>
+<body>
+    <div class="card">
+        <h2>User Profile</h2>
+        <table>
+            <tr>
+                <td class="profile-pic" colspan="2">
+                    <img src="https://i.pravatar.cc/150?img=3" alt="Profile Picture">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="login">mylogin42</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="description">Web Explorer</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="social-icons">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733579.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/24/733/733614.png" alt="Instagram"></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button class="contact-btn">Contact</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profile-pic img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.login {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.description {
+    color: gray;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.social-icons img {
+    margin: 10px 5px;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.conta
