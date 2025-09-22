@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Parallax Example</title>
+    <link rel="stylesheet" href="parallax.css" />
+</head>
+<body>
+    <!-- ภาพแรกกับข้อความตรงกลาง -->
+    <section class="parallax parallax1">
+        <div class="centered-text">Welcome to the Parallax World</div>
+    </section>
+
+    <!-- บล็อกสีดำพร้อมข้อความ -->
+    <section class="black-block">
+        <p>This is a black block with your custom message. Scroll down for more!</p>
+    </section>
+
+    <!-- ภาพที่สองกับข้อความตรงกลาง -->
+    <section class="parallax parallax2">
+        <div class="centered-text">Thanks for visiting!</div>
+    </section>
+</body>
+</html>
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Parallax common style */
+.parallax {
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3em;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Background images */
+.parallax1 {
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+}
+
+.parallax2 {
+    background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1350&q=80');
+}
+
+/* Black block */
+.black-block {
+    background-color: black;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    font-size: 1.8em;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
